@@ -167,7 +167,7 @@ class PassThroughRemuxer implements Remuxer {
     }
 
     const duration = getDuration(data, initData);
-    const startDTS = lastEndDTS as number;
+    const startDTS = getStartDTS(initData, data);
     const endDTS = duration + startDTS;
     offsetStartDTS(initData, data, initPTS as number);
 
